@@ -1,0 +1,158 @@
+@use '../abstracts/' as *;
+
+.hero {
+	position: relative;
+	background-image: url('/assets/background1.jpg');
+	background-size: cover;
+	background-position: center;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 7rem;
+		padding: 10rem 0 1rem;
+		/* border: 1px solid red; */
+	}
+
+	&__title {
+		display: flex;
+		flex-wrap: wrap;
+		width: 50%;
+		gap: 0.6rem;
+		z-index: 2;
+
+		> span {
+			padding: 0.5rem 0.8rem;
+			color: $text-light;
+			font-size: 0.8rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			background: $color-red;
+			border-radius: 20px;
+		}
+
+		h2 {
+			a {
+				color: $text-light;
+			}
+		}
+
+		div {
+			display: flex;
+			color: $text-light;
+			gap: 0.5rem;
+			width: 100%;
+
+			strong {
+				font-weight: 500;
+			}
+
+			span {
+				opacity: 0.7;
+			}
+		}
+
+		> a:last-child {
+			margin-top: 2rem;
+			color: $text-light;
+			font-size: 0.9rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			border: 2px solid $text-light;
+			border-radius: 25px;
+			padding: 0.5rem 1.9rem;
+			transition: 0.3s;
+
+			&:hover {
+				background: $color-red;
+				border-color: $color-red;
+			}
+		}
+	}
+
+	&__featured {
+		z-index: 2;
+
+		ul {
+			display: flex;
+			gap: 1rem;
+
+			li {
+				width: 25%;
+				cursor: pointer;
+				padding-top: 1rem;
+				color: $text-light;
+				border-top: 2px solid rgba(131, 131, 131, 0.466);
+
+				&.active {
+					border-color: $text-light;
+				}
+			}
+		}
+
+		&-cards {
+			display: flex;
+			gap: 1rem;
+
+			img {
+				object-fit: cover;
+				width: 30%;
+			}
+
+			div {
+				display: flex;
+				flex-direction: column;
+
+				strong {
+					font-weight: 400;
+				}
+
+				span {
+					font-size: 0.8rem;
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, rgb(19, 19, 21) 0%, rgba(19, 19, 21, 0.2) 40%, rgba(19, 19, 21, 0.2) 50%, rgb(19, 19, 21) 100%);
+	}
+
+	&__sliderBtn {
+		z-index: 2;
+		position: absolute;
+		padding: 1.5rem;
+		width: auto;
+		background: none;
+		border: none;
+		border-radius: 50%;
+		color: $text-light;
+		font-size: 1.3rem;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+			background: rgba(0, 0, 0, 0.288);
+		}
+
+		&-prev {
+			@extend .hero__sliderBtn;
+			top: 40%;
+			left: 1%;
+		}
+
+		&-next {
+			@extend .hero__sliderBtn;
+			top: 40%;
+			right: 1%;
+		}
+	}
+}

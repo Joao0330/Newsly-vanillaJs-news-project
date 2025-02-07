@@ -1,1 +1,11 @@
-/* Here I put all classes that will be re used throughout the project such as the container and the img-fluid etc. */
+.container {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	/* border: 1px solid red; */
+}
+
+.img-fluid {
+	width: 100%;
+	height: auto;
+}
