@@ -455,3 +455,35 @@ small {
   color: #101010;
   opacity: 0.7;
 }
+
+.footer {
+  padding: 3rem 0;
+  background: rgb(19, 19, 19);
+  color: #fafafa;
+}
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.footer__top {
+  width: 50%;
+}
+.footer__top h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  padding-top: 2rem;
+}
+.footer__bottom a {
+  color: #fafafa;
+  transition: 0.3s;
+}
+.footer__bottom a:hover {
+  color: #e62b34;
+}
