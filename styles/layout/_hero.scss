@@ -6,12 +6,24 @@
 	background-size: cover;
 	background-position: center;
 
+	@include breakpointDesktop(768px) {
+		height: 100vh;
+
+		&__wrapper {
+			height: 100vh;
+			justify-content: center;
+		}
+	}
+
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 7rem;
 		padding: 10rem 0 1rem;
-		/* border: 1px solid red; */
+
+		@include breakpointDesktop(991px) {
+			padding: 10rem 0 5rem;
+		}
 	}
 
 	&__title {
@@ -20,6 +32,19 @@
 		width: 50%;
 		gap: 0.6rem;
 		z-index: 2;
+
+		@include breakpointDesktop(991px) {
+			width: 100%;
+			gap: 2rem;
+
+			span {
+				display: none;
+			}
+
+			h2 {
+				text-align: center;
+			}
+		}
 
 		> span {
 			padding: 0.5rem 0.8rem;
@@ -34,6 +59,10 @@
 		h2 {
 			a {
 				color: $text-light;
+
+				@include breakpointDesktop(430px) {
+					font-size: 2.3rem;
+				}
 			}
 		}
 
@@ -67,11 +96,20 @@
 				background: $color-red;
 				border-color: $color-red;
 			}
+
+			@include breakpointDesktop(768px) {
+				width: 100%;
+				text-align: center;
+			}
 		}
 	}
 
 	&__featured {
 		z-index: 2;
+
+		@include breakpointDesktop(991px) {
+			display: none;
+		}
 
 		ul {
 			display: flex;

@@ -1,3 +1,5 @@
+@use '../abstracts/' as *;
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -11,13 +13,13 @@ html {
 	text-size-adjust: none;
 	scroll-behavior: smooth;
 
-	/* @include breakpointDesktop(768px) {
+	@include breakpointDesktop(768px) {
 		font-size: 14px;
 	}
 
 	@include breakpointDesktop(480px) {
 		font-size: 12px;
-	} */
+	}
 }
 
 body {

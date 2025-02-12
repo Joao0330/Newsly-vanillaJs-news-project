@@ -11,13 +11,16 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scroll-behavior: smooth;
-  /* @include breakpointDesktop(768px) {
-  	font-size: 14px;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
   }
-
-  @include breakpointDesktop(480px) {
-  	font-size: 12px;
-  } */
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -94,30 +97,22 @@ small {
   margin: 0 auto;
   /* border: 1px solid red; */
 }
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
 
 .img-fluid {
   width: 100%;
   height: auto;
 }
 
-/* @mixin breakpointDesktop($break: 0) {
-	@media (max-width: $break) {
-		@content;
-	}
-}
-
-@mixin breakpointMobile($break: 0) {
-	@media (min-width: $break) {
-		@content;
-	}
-} */
-/* @include breakpointDesktop(991px) {
-	width: 100%;
-}
-
-@include breakpointMobile(991px) {
-    width: 100%;
-} */
 /* @use '../abstracts' as *; */
 .navbar a {
   color: #fafafa;
@@ -132,6 +127,21 @@ small {
   justify-content: space-between;
   padding: 0.3rem 0;
   border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+@media (max-width: 1200px) {
+  .navbar__wrapper {
+    padding: 0 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .navbar__wrapper {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 991px) {
+  .navbar nav {
+    display: none;
+  }
 }
 .navbar nav ul {
   display: flex;
@@ -170,6 +180,11 @@ small {
   display: flex;
   gap: 1.5rem;
 }
+@media (max-width: 991px) {
+  .navbar__right {
+    display: none;
+  }
+}
 .navbar__right button {
   border: none;
   background: none;
@@ -183,6 +198,36 @@ small {
 .navbar__right button:hover i {
   color: #e62b34;
 }
+.navbar__hamburger {
+  display: none;
+}
+@media (max-width: 991px) {
+  .navbar__hamburger {
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    z-index: 3;
+    background: transparent;
+  }
+  .navbar__hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.5s ease;
+    background: #fafafa;
+  }
+  .navbar__hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar__hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar__hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
 
 .hero {
   position: relative;
@@ -190,12 +235,25 @@ small {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+  }
+  .hero__wrapper {
+    height: 100vh;
+    justify-content: center;
+  }
+}
 .hero__wrapper {
   display: flex;
   flex-direction: column;
   gap: 7rem;
   padding: 10rem 0 1rem;
-  /* border: 1px solid red; */
+}
+@media (max-width: 991px) {
+  .hero__wrapper {
+    padding: 10rem 0 5rem;
+  }
 }
 .hero__title {
   display: flex;
@@ -203,6 +261,18 @@ small {
   width: 50%;
   gap: 0.6rem;
   z-index: 2;
+}
+@media (max-width: 991px) {
+  .hero__title {
+    width: 100%;
+    gap: 2rem;
+  }
+  .hero__title span {
+    display: none;
+  }
+  .hero__title h2 {
+    text-align: center;
+  }
 }
 .hero__title > span {
   padding: 0.5rem 0.8rem;
@@ -215,6 +285,11 @@ small {
 }
 .hero__title h2 a {
   color: #fafafa;
+}
+@media (max-width: 430px) {
+  .hero__title h2 a {
+    font-size: 2.3rem;
+  }
 }
 .hero__title div {
   display: flex;
@@ -243,8 +318,19 @@ small {
   background: #e62b34;
   border-color: #e62b34;
 }
+@media (max-width: 768px) {
+  .hero__title > a:last-child {
+    width: 100%;
+    text-align: center;
+  }
+}
 .hero__featured {
   z-index: 2;
+}
+@media (max-width: 991px) {
+  .hero__featured {
+    display: none;
+  }
 }
 .hero__featured ul {
   display: flex;
@@ -323,19 +409,43 @@ small {
   display: flex;
   gap: 5rem;
 }
+@media (max-width: 1200px) {
+  .news__wrapper {
+    flex-direction: column;
+  }
+}
 .news__content ul {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 490px) {
+  .news__content ul {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
 .news__content ul li {
-  font-size: 1.27rem;
-  font-weight: 500;
   opacity: 0.5;
 }
-.news__content ul li:nth-child(1) {
+.news__content ul li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.27rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.news__content ul li button:hover {
   color: #e62b34;
+}
+.news__content ul li:nth-child(1) {
   opacity: 1;
+}
+.news__content ul li:nth-child(1) button {
+  color: #e62b34;
 }
 .news__content-cards {
   display: grid;
@@ -343,10 +453,25 @@ small {
   grid-template-rows: auto;
   gap: 1.5rem;
 }
+@media (max-width: 900px) {
+  .news__content-cards {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 640px) {
+  .news__content-cards {
+    grid-template-columns: 1fr;
+  }
+}
 .news__content-cards article {
   position: relative;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.363);
   overflow: hidden;
+  /* @include breakpointDesktop(640px) {
+  	grid-template-columns: 1fr;
+  } */
 }
 .news__content-cards article a {
   color: #fafafa;
@@ -411,6 +536,11 @@ small {
 .news__side {
   width: 38%;
 }
+@media (max-width: 1200px) {
+  .news__side {
+    width: auto;
+  }
+}
 .news__side h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
@@ -429,6 +559,11 @@ small {
   width: 30%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .news__side-cards article img {
+    width: auto;
+  }
 }
 .news__side-cards article a:nth-child(1) {
   font-size: 0.75rem;
@@ -469,6 +604,11 @@ small {
 .footer__top {
   width: 50%;
 }
+@media (max-width: 768px) {
+  .footer__top {
+    width: 100%;
+  }
+}
 .footer__top h2 {
   font-weight: 500;
   margin-bottom: 1rem;
@@ -479,6 +619,13 @@ small {
   justify-content: space-between;
   border-top: 1px solid rgba(128, 128, 128, 0.5);
   padding-top: 2rem;
+}
+@media (max-width: 375px) {
+  .footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
 }
 .footer__bottom a {
   color: #fafafa;

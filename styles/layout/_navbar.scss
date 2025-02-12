@@ -15,9 +15,21 @@
 		justify-content: space-between;
 		padding: 0.3rem 0;
 		border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+
+		@include breakpointDesktop(1200px) {
+			padding: 0 4rem;
+		}
+
+		@include breakpointDesktop(768px) {
+			padding: 0 2rem;
+		}
 	}
 
 	nav {
+		@include breakpointDesktop(991px) {
+			display: none;
+		}
+
 		ul {
 			display: flex;
 			gap: 2rem;
@@ -62,6 +74,10 @@
 		display: flex;
 		gap: 1.5rem;
 
+		@include breakpointDesktop(991px) {
+			display: none;
+		}
+
 		button {
 			border: none;
 			background: none;
@@ -77,6 +93,40 @@
 				i {
 					color: $color-red;
 				}
+			}
+		}
+	}
+
+	&__hamburger {
+		display: none;
+
+		@include breakpointDesktop(991px) {
+			display: block;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			z-index: 3;
+			background: transparent;
+
+			span {
+				display: block;
+				width: 25px;
+				height: 3px;
+				margin: 5px auto;
+				transition: all 0.5s ease;
+				background: $text-light;
+			}
+
+			&.active span:nth-child(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+
+			&.active span:nth-child(2) {
+				opacity: 0;
+			}
+
+			&.active span:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
 			}
 		}
 	}

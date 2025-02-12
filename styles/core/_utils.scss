@@ -1,8 +1,18 @@
+@use '../abstracts/' as *;
+
 .container {
 	position: relative;
 	max-width: 1200px;
 	margin: 0 auto;
 	/* border: 1px solid red; */
+
+	@include breakpointDesktop(1200px) {
+		padding: 0 4rem;
+	}
+
+	@include breakpointDesktop(640px) {
+		padding: 0 2rem;
+	}
 }
 
 .img-fluid {
