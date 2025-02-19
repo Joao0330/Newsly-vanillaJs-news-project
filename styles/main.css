@@ -231,9 +231,9 @@ small {
 
 .hero {
   position: relative;
-  /* background-image: url('/assets/background1.jpg'); */
   background-size: cover;
   background-position: center;
+  transition: 0.5s ease-in-out;
 }
 @media (max-width: 768px) {
   .hero {
@@ -258,7 +258,7 @@ small {
 .hero__title {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 100%;
   gap: 0.6rem;
   z-index: 2;
 }
@@ -339,9 +339,13 @@ small {
   padding-top: 1rem;
   color: #fafafa;
   border-top: 2px solid rgba(131, 131, 131, 0.466);
+  transition: 0.3s;
 }
 .hero__featured ul li.active {
   border-color: #fafafa;
+}
+.hero__featured ul li:hover {
+  opacity: 0.7;
 }
 .hero__featured-cards {
   display: flex;

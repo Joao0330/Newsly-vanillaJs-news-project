@@ -47,7 +47,7 @@ const createArticleHTML = (article, type = 'default') => {
 
 	if (type === 'featured') {
 		return `
-            <li>
+            <li data-author="${authorName}">
                 <div class="hero__featured-cards">
                     <img src="${imageUrl}" alt="${title}" class="img-fluid" />
                     <div>
@@ -117,6 +117,7 @@ const displayNews = async () => {
 	const featuredArticles = news.slice(0, 4);
 	featuredArticles.forEach(article => {
 		heroFeatured.innerHTML += createArticleHTML(article, 'featured');
+		heroFeatured.firstElementChild.classList.add('active');
 	});
 
 	// News cards (next 9 articles)
