@@ -1,8 +1,4 @@
-window.addEventListener('load', () => {
-	setTimeout(initializeHeroSlider, 1000);
-});
-
-function initializeHeroSlider() {
+export function initializeHeroSlider() {
 	const hero = document.querySelector('.hero');
 	const heroArticles = document.querySelectorAll('.hero__featured ul li');
 	const nextBtn = document.querySelector('.hero__sliderBtn-next');
@@ -12,10 +8,13 @@ function initializeHeroSlider() {
 		const heroImage = activeElement.querySelector('img').src;
 		const title = activeElement.querySelector('strong').textContent;
 		const author = activeElement.getAttribute('data-author');
+		const url = activeElement.getAttribute('data-url');
 
 		hero.style.backgroundImage = `url(${heroImage})`;
 		document.querySelector('.hero__title h2 a').textContent = title;
 		document.querySelector('.hero__title strong').textContent = author;
+		document.querySelector('.hero__title a').href = url;
+		document.querySelector('#readMore').href = url;
 	};
 
 	const changeSlide = direction => {

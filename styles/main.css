@@ -233,7 +233,8 @@ small {
   position: relative;
   background-size: cover;
   background-position: center;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s;
+  height: 800px;
 }
 @media (max-width: 768px) {
   .hero {
@@ -247,8 +248,9 @@ small {
 .hero__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  justify-content: space-between;
   padding: 10rem 0 4rem;
+  height: 800px;
 }
 @media (max-width: 991px) {
   .hero__wrapper {
@@ -502,7 +504,7 @@ small {
   font-size: 0.8rem;
 }
 .news__side {
-  width: 38%;
+  width: 58%;
 }
 @media (max-width: 1200px) {
   .news__side {
@@ -522,6 +524,9 @@ small {
 .news__side-cards article {
   display: flex;
   gap: 1rem;
+  padding: 1rem;
+  background: #f3ecec;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.164);
 }
 .news__side-cards article img {
   width: 30%;

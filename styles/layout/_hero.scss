@@ -4,7 +4,8 @@
 	position: relative;
 	background-size: cover;
 	background-position: center;
-	transition: 0.5s ease-in-out;
+	transition: 0.5s;
+	height: 800px;
 
 	@include breakpointDesktop(768px) {
 		height: 100vh;
@@ -18,8 +19,9 @@
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		gap: 7rem;
+		justify-content: space-between;
 		padding: 10rem 0 4rem;
+		height: 800px;
 
 		@include breakpointDesktop(991px) {
 			padding: 10rem 0 5rem;

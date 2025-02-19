@@ -1,3 +1,5 @@
+import { initializeHeroSlider } from './slider.js';
+
 const apiKey = 'b9dd818f885941bda30e6df5ede540b5';
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
@@ -41,13 +43,13 @@ const createArticleHTML = (article, type = 'default') => {
                 <strong>${authorName}</strong>
                 <span>${date}</span>
             </div>
-            <a href="${url}" target="_blank">Read more</a>
+            <a href="${url}" target="_blank" id="readMore">Read more</a>
         `;
 	}
 
 	if (type === 'featured') {
 		return `
-            <li data-author="${authorName}">
+            <li data-author="${authorName}" data-url="${url}">
                 <div class="hero__featured-cards">
                     <img src="${imageUrl}" alt="${title}" class="img-fluid" />
                     <div>
@@ -131,7 +133,11 @@ const displayNews = async () => {
 	sideArticles.forEach(article => {
 		sideNews.innerHTML += createArticleHTML(article, 'side');
 	});
+
+	initializeHeroSlider();
 };
 
 // Initialize on page load
-window.addEventListener('load', displayNews);
+window.addEventListener('load', () => {
+	displayNews();
+});

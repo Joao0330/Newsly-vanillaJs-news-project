@@ -113,7 +113,7 @@
 	}
 
 	&__side {
-		width: 38%;
+		width: 58%;
 
 		@include breakpointDesktop(1200px) {
 			width: auto;
@@ -133,6 +133,9 @@
 			article {
 				display: flex;
 				gap: 1rem;
+				padding: 1rem;
+				background: $background-card-light;
+				box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.164);
 
 				img {
 					width: 30%;
