@@ -49,7 +49,7 @@
 						display: flex;
 						width: 100%;
 						padding: 0.5rem 0;
-						color: $text-dark;
+						color: var(--text-color);
 					}
 				}
 			}
@@ -64,7 +64,7 @@
 			height: 100%;
 			width: 40%;
 			padding: 4rem 2rem 3rem;
-			background: $background-card-light;
+			background: var(--card-background-color);
 			box-shadow: -10px 0px 21px 0px rgba(0, 0, 0, 0.315);
 			gap: 3rem;
 			overflow-y: scroll;
@@ -137,6 +137,7 @@
 
 		button {
 			border: none;
+			width: 30px;
 			background: none;
 			cursor: pointer;
 

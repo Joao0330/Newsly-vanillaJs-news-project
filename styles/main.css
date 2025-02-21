@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --text-color: #101010;
+  --background-color: #f2f2f2;
+  --card-background-color: #f3ecec;
+}
+
+[data-theme=dark] {
+  --text-color: #fafafa;
+  --background-color: #08090b;
+  --card-background-color: #0a0d12;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -163,7 +175,7 @@ small {
     display: flex;
     width: 100%;
     padding: 0.5rem 0;
-    color: #101010;
+    color: var(--text-color);
   }
 }
 .navbar nav.active {
@@ -175,7 +187,7 @@ small {
   height: 100%;
   width: 40%;
   padding: 4rem 2rem 3rem;
-  background: #f3ecec;
+  background: var(--card-background-color);
   box-shadow: -10px 0px 21px 0px rgba(0, 0, 0, 0.315);
   gap: 3rem;
   overflow-y: scroll;
@@ -239,6 +251,7 @@ small {
 }
 .navbar__right button {
   border: none;
+  width: 30px;
   background: none;
   cursor: pointer;
 }
@@ -475,7 +488,7 @@ small {
 }
 
 .news {
-  background: #f2f2f2;
+  background: var(--background-color);
   padding: 4rem 0;
 }
 .news__wrapper {
@@ -552,7 +565,7 @@ small {
   transition: 0.3s;
 }
 .news__content-cards-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
@@ -582,7 +595,7 @@ small {
 .news__side h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #101010;
+  color: var(--text-color);
 }
 .news__side-cards {
   display: flex;
@@ -593,7 +606,7 @@ small {
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  background: #f3ecec;
+  background: var(--card-background-color);
   box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.164);
 }
 .news__side-cards article img {
@@ -608,7 +621,7 @@ small {
   }
 }
 .news__side-cards article a {
-  color: #101010;
+  color: var(--text-color);
   opacity: 1;
   transition: 0.2s;
 }
@@ -621,7 +634,7 @@ small {
   opacity: 0.8;
 }
 .news__side-cards article span {
-  color: #101010;
+  color: var(--text-color);
   opacity: 0.7;
 }
 
