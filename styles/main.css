@@ -119,7 +119,7 @@ small {
 }
 .navbar__wrapper {
   position: absolute;
-  z-index: 2;
+  z-index: 9999;
   left: 0;
   right: 0;
   display: flex;
@@ -138,10 +138,61 @@ small {
     padding: 0 2rem;
   }
 }
+.navbar nav {
+  position: relative;
+  display: flex;
+  gap: 10rem;
+  opacity: 1;
+  transition: right 0.4s;
+}
 @media (max-width: 991px) {
   .navbar nav {
-    display: none;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    right: -100%;
+    flex-direction: column;
   }
+  .navbar nav ul {
+    flex-direction: column;
+  }
+  .navbar nav ul li {
+    width: 100%;
+  }
+  .navbar nav ul li a {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 0;
+    color: #101010;
+  }
+}
+.navbar nav.active {
+  opacity: 1;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40%;
+  padding: 4rem 2rem 3rem;
+  background: #f3ecec;
+  box-shadow: -10px 0px 21px 0px rgba(0, 0, 0, 0.315);
+  gap: 3rem;
+  overflow-y: scroll;
+}
+@media (max-width: 580px) {
+  .navbar nav.active {
+    width: 50%;
+  }
+}
+.navbar nav.active .navbar__right {
+  display: flex;
+}
+.navbar nav.active .navbar__right i {
+  color: #e62b34;
+}
+.navbar nav.active #mobile-closeBtn {
+  display: flex;
 }
 .navbar nav ul {
   display: flex;
@@ -157,6 +208,7 @@ small {
   position: absolute;
   bottom: 0;
   left: 50%;
+  width: 100%;
   background: #e62b34;
   height: 4px;
   width: 0;
@@ -198,6 +250,19 @@ small {
 .navbar__right button:hover i {
   color: #e62b34;
 }
+.navbar #mobile-closeBtn {
+  position: absolute;
+  top: 4%;
+  right: 15%;
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.navbar #mobile-closeBtn i {
+  font-size: 1.3rem;
+  color: #e62b34;
+}
 .navbar__hamburger {
   display: none;
 }
@@ -207,7 +272,7 @@ small {
     cursor: pointer;
     outline: none;
     border: none;
-    z-index: 3;
+    z-index: 1;
     background: transparent;
   }
   .navbar__hamburger span {
@@ -217,6 +282,9 @@ small {
     margin: 5px auto;
     transition: all 0.5s ease;
     background: #fafafa;
+  }
+  .navbar__hamburger.active span {
+    background: #e62b34;
   }
   .navbar__hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -233,15 +301,15 @@ small {
   position: relative;
   background-size: cover;
   background-position: center;
-  transition: 0.5s;
+  transition: 1s;
   height: 800px;
 }
 @media (max-width: 768px) {
   .hero {
-    height: 100vh;
+    height: 150vh;
   }
   .hero__wrapper {
-    height: 100vh;
+    height: 150vh;
     justify-content: center;
   }
 }

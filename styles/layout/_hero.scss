@@ -4,14 +4,14 @@
 	position: relative;
 	background-size: cover;
 	background-position: center;
-	transition: 0.5s;
+	transition: 1s;
 	height: 800px;
 
 	@include breakpointDesktop(768px) {
-		height: 100vh;
+		height: 150vh;
 
 		&__wrapper {
-			height: 100vh;
+			height: 150vh;
 			justify-content: center;
 		}
 	}

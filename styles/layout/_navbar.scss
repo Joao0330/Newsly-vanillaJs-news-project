@@ -7,7 +7,7 @@
 
 	&__wrapper {
 		position: absolute;
-		z-index: 2;
+		z-index: 9999;
 		left: 0;
 		right: 0;
 		display: flex;
@@ -26,8 +26,64 @@
 	}
 
 	nav {
+		position: relative;
+		display: flex;
+		gap: 10rem;
+		opacity: 1;
+		transition: right 0.4s;
+
 		@include breakpointDesktop(991px) {
-			display: none;
+			height: 0;
+			opacity: 0;
+			overflow: hidden;
+			right: -100%;
+			flex-direction: column;
+
+			ul {
+				flex-direction: column;
+
+				li {
+					width: 100%;
+
+					a {
+						display: flex;
+						width: 100%;
+						padding: 0.5rem 0;
+						color: $text-dark;
+					}
+				}
+			}
+		}
+
+		&.active {
+			opacity: 1;
+			z-index: 9;
+			position: fixed;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 40%;
+			padding: 4rem 2rem 3rem;
+			background: $background-card-light;
+			box-shadow: -10px 0px 21px 0px rgba(0, 0, 0, 0.315);
+			gap: 3rem;
+			overflow-y: scroll;
+
+			@include breakpointDesktop(580px) {
+				width: 50%;
+			}
+
+			.navbar__right {
+				display: flex;
+
+				i {
+					color: $color-red;
+				}
+			}
+
+			#mobile-closeBtn {
+				display: flex;
+			}
 		}
 
 		ul {
@@ -44,6 +100,7 @@
 					position: absolute;
 					bottom: 0;
 					left: 50%;
+					width: 100%;
 					background: $color-red;
 					height: 4px;
 					width: 0;
@@ -97,6 +154,21 @@
 		}
 	}
 
+	#mobile-closeBtn {
+		position: absolute;
+		top: 4%;
+		right: 15%;
+		display: none;
+		border: none;
+		background: none;
+		cursor: pointer;
+
+		i {
+			font-size: 1.3rem;
+			color: $color-red;
+		}
+	}
+
 	&__hamburger {
 		display: none;
 
@@ -105,7 +177,7 @@
 			cursor: pointer;
 			outline: none;
 			border: none;
-			z-index: 3;
+			z-index: 1;
 			background: transparent;
 
 			span {
@@ -115,6 +187,12 @@
 				margin: 5px auto;
 				transition: all 0.5s ease;
 				background: $text-light;
+			}
+
+			&.active {
+				span {
+					background: $color-red;
+				}
 			}
 
 			&.active span:nth-child(1) {
