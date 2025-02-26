@@ -1,6 +1,7 @@
-import { initializeHeroSlider } from './slider.js';
+import { fetchNews } from '../../lib/api.js';
+import { apiKey } from '../../lib/config.js';
+import { initializeHeroSlider } from '../slider.js';
 
-const apiKey = 'b9dd818f885941bda30e6df5ede540b5';
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
 // DOM Elements
@@ -9,23 +10,6 @@ const heroContent = document.querySelector('.hero__title');
 const heroFeatured = document.querySelector('.hero__featured ul');
 const newsCards = document.querySelector('.news__content-cards');
 const sideNews = document.querySelector('.news__side-cards');
-
-// Fetch news data
-const fetchNews = async () => {
-	try {
-		const response = await fetch(apiUrl);
-
-		if (!response.ok) {
-			throw new Error('Could not fetch resource');
-		}
-
-		const data = await response.json();
-		return data.articles;
-	} catch (error) {
-		console.error('Error fetching news:', error);
-		return []; // Return an empty array in case of error
-	}
-};
 
 // Generate HTML for a single article
 const createArticleHTML = (article, type = 'default') => {
@@ -68,7 +52,7 @@ const createArticleHTML = (article, type = 'default') => {
 
 				<div>
 					<a href=${url} target="_blank">
-						<h5>${title}</h5>
+						<h5>${title.slice(0, 80) + ' ...'}</h5>
 					</a>
 
 					<span>${date}</span>
@@ -97,7 +81,7 @@ const createArticleHTML = (article, type = 'default') => {
 
 // Display news on the page
 const displayNews = async () => {
-	const news = await fetchNews();
+	const news = await fetchNews(apiUrl);
 
 	if (news.length === 0) {
 		console.error('No news articles found.');
