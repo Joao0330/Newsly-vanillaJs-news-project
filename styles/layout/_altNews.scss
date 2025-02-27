@@ -36,7 +36,6 @@
 
 	&__top {
 		display: flex;
-
 		gap: 2rem;
 
 		div:first-child {
@@ -67,7 +66,7 @@
 			}
 
 			div {
-				background: none;
+				background: var(--background-color);
 
 				h3 {
 					font-size: 1.2rem;
@@ -79,12 +78,28 @@
 			border-radius: 10px;
 			overflow: hidden;
 
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+
+				h3 {
+					opacity: 0.7;
+				}
+			}
+
+			img {
+				transition: 0.3s;
+			}
+
 			div {
+				position: relative;
 				display: flex;
 				flex-direction: column;
 				gap: 0.5rem;
 				background: var(--card-background-color);
 				padding: 1rem;
+				z-index: 5;
 
 				a {
 					color: var(--text-color);
@@ -94,6 +109,8 @@
 					h3 {
 						font-size: 1.563rem;
 						font-weight: 500;
+						opacity: 1;
+						transition: 0.3s;
 					}
 				}
 
