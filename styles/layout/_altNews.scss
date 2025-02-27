@@ -8,6 +8,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
+
+		> h3 {
+			font-weight: 500;
+			padding: 1rem 0;
+			color: var(--text-color);
+			border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+		}
 	}
 
 	&__title {
@@ -15,14 +22,22 @@
 		align-items: center;
 
 		h2 {
-			color: var(--text-color);
+			color: $color-red;
 			font-size: 2rem;
 			text-align: center;
 			width: 30%;
+
+			@include breakpointDesktop(940px) {
+				width: 50%;
+			}
 		}
 
 		span {
 			border-top: 2px solid rgba(131, 131, 131, 0.466);
+
+			@include breakpointDesktop(768px) {
+				display: none;
+			}
 
 			&:first-child {
 				width: 15%;
@@ -37,9 +52,18 @@
 	&__top {
 		display: flex;
 		gap: 2rem;
+		margin-bottom: 4rem;
+
+		@include breakpointDesktop(991px) {
+			flex-direction: column;
+		}
 
 		div:first-child {
 			width: 50%;
+
+			@include breakpointDesktop(991px) {
+				width: 100%;
+			}
 
 			article {
 				box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.164);
@@ -58,6 +82,14 @@
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto;
 			gap: 2rem;
+
+			@include breakpointDesktop(991px) {
+				width: 100%;
+			}
+
+			@include breakpointDesktop(650px) {
+				grid-template-columns: 1fr;
+			}
 
 			img {
 				height: 160px;
@@ -80,7 +112,7 @@
 
 			&:hover {
 				img {
-					transform: scale(1.1);
+					transform: scale(1.05);
 				}
 
 				h3 {

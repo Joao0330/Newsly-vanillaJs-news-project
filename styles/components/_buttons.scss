@@ -1,3 +1,29 @@
-/* @use '../abstracts' as *; */
+@use '../abstracts' as *;
 
-//Here i put all reusable components such as buttons, cards, navigation bars, modals, etc.
+#scrollToTop {
+	position: fixed;
+	right: 5%;
+	bottom: -10%;
+	padding: 1.4rem;
+	border: none;
+	background: $color-red;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 999999;
+	opacity: 0;
+	transition: opacity 0.3s, bottom 0.3s;
+
+	&.active {
+		opacity: 1;
+		bottom: 5%;
+	}
+
+	i {
+		font-size: 1.3rem;
+		color: $text-light;
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

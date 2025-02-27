@@ -219,7 +219,31 @@ small {
   opacity: 0;
 }
 
-/* @use '../abstracts' as *; */
+#scrollToTop {
+  position: fixed;
+  right: 5%;
+  bottom: -10%;
+  padding: 1.4rem;
+  border: none;
+  background: #e62b34;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+#scrollToTop.active {
+  opacity: 1;
+  bottom: 5%;
+}
+#scrollToTop i {
+  font-size: 1.3rem;
+  color: #fafafa;
+}
+#scrollToTop:hover {
+  opacity: 0.8;
+}
+
 .navbar a {
   color: #fafafa;
 }
@@ -786,18 +810,34 @@ small {
   flex-direction: column;
   gap: 3rem;
 }
+.newsAlt__wrapper > h3 {
+  font-weight: 500;
+  padding: 1rem 0;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
 .newsAlt__title {
   display: flex;
   align-items: center;
 }
 .newsAlt__title h2 {
-  color: var(--text-color);
+  color: #e62b34;
   font-size: 2rem;
   text-align: center;
   width: 30%;
 }
+@media (max-width: 940px) {
+  .newsAlt__title h2 {
+    width: 50%;
+  }
+}
 .newsAlt__title span {
   border-top: 2px solid rgba(131, 131, 131, 0.466);
+}
+@media (max-width: 768px) {
+  .newsAlt__title span {
+    display: none;
+  }
 }
 .newsAlt__title span:first-child {
   width: 15%;
@@ -808,9 +848,20 @@ small {
 .newsAlt__top {
   display: flex;
   gap: 2rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 991px) {
+  .newsAlt__top {
+    flex-direction: column;
+  }
 }
 .newsAlt__top div:first-child {
   width: 50%;
+}
+@media (max-width: 991px) {
+  .newsAlt__top div:first-child {
+    width: 100%;
+  }
 }
 .newsAlt__top div:first-child article {
   box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.164);
@@ -827,6 +878,16 @@ small {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 2rem;
+}
+@media (max-width: 991px) {
+  .newsAlt__top > div:nth-child(2) {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .newsAlt__top > div:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
 }
 .newsAlt__top > div:nth-child(2) img {
   height: 160px;
@@ -845,7 +906,7 @@ small {
   overflow: hidden;
 }
 .newsAlt__top article:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .newsAlt__top article:hover h3 {
   opacity: 0.7;

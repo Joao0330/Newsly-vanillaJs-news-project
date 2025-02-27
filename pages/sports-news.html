@@ -7,6 +7,10 @@
 		<title>Newsly - Sports</title>
 	</head>
 	<body>
+		<button id="scrollToTop">
+			<i class="fa-solid fa-arrow-up"></i>
+		</button>
+
 		<div class="loader">
 			<div class="loader__wrapper">
 				<div class="loader__circle"></div>
@@ -82,13 +86,15 @@
 					<div class="newsAlt__wrapper">
 						<div class="newsAlt__title">
 							<span></span>
-							<h2>Sports News</h2>
+							<h2>Latest News</h2>
 							<span></span>
 						</div>
 						<div class="newsAlt__top">
 							<div></div>
 							<div></div>
 						</div>
+
+						<h3>See other relevant sports news</h3>
 
 						<div class="news__content-cards"></div>
 					</div>
@@ -119,6 +125,7 @@
 		<script type="module" src="../scripts/fetchNews.js"></script>
 		<script src="../scripts/mobile-menu.js"></script>
 		<script src="../scripts/theme.js"></script>
+		<script src="../scripts/scrollToTop.js"></script>
 		<script src="../scripts/loader.js"></script>
 	</body>
 </html>
