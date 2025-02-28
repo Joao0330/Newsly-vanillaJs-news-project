@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles/main.css" />
-		<title>Newsly - Home</title>
+		<link rel="stylesheet" href="../styles/main.css" />
+		<title>Newsly - Science</title>
 	</head>
 	<body>
 		<button id="scrollToTop">
@@ -32,9 +32,9 @@
 
 						<nav>
 							<ul>
-								<li><a href="/" class="active">Home</a></li>
+								<li><a href="/">Home</a></li>
 								<li><a href="/pages/sports-news.html">Sports</a></li>
-								<li><a href="/pages/science-news.html">Science</a></li>
+								<li><a href="/pages/science-news.html" class="active">Science</a></li>
 								<li><a href="/pages/health-news.html">Health</a></li>
 								<li><a href="/pages/business-news.html">Business</a></li>
 								<li><a href="/pages/technology-news.html">Technology</a></li>
@@ -81,18 +81,22 @@
 				<button class="hero__sliderBtn hero__sliderBtn-next"><i class="fa-solid fa-chevron-right"></i></button>
 			</section>
 
-			<section class="news">
+			<section class="newsAlt">
 				<div class="container">
-					<div class="news__wrapper">
-						<div class="news__content">
-							<div class="news__content-cards"></div>
+					<div class="newsAlt__wrapper">
+						<div class="newsAlt__title">
+							<span></span>
+							<h2>Latest News</h2>
+							<span></span>
+						</div>
+						<div class="newsAlt__top">
+							<div></div>
+							<div></div>
 						</div>
 
-						<aside class="news__side">
-							<h4>What's hot</h4>
+						<h3>See other relevant science news</h3>
 
-							<div class="news__side-cards"></div>
-						</aside>
+						<div class="news__content-cards"></div>
 					</div>
 				</div>
 			</section>
@@ -118,10 +122,10 @@
 		</footer>
 
 		<script src="https://kit.fontawesome.com/b5dc311f0a.js" crossorigin="anonymous"></script>
-		<script type="module" src="scripts/fetchNews.js"></script>
-		<script src="scripts/mobile-menu.js"></script>
-		<script src="scripts/theme.js"></script>
-		<script src="scripts/scrollToTop.js"></script>
-		<script src="scripts/loader.js"></script>
+		<script type="module" src="../scripts/fetchNews.js"></script>
+		<script src="../scripts/mobile-menu.js"></script>
+		<script src="../scripts/theme.js"></script>
+		<script src="../scripts/scrollToTop.js"></script>
+		<script src="../scripts/loader.js"></script>
 	</body>
 </html>
