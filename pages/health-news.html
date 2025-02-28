@@ -41,7 +41,7 @@
 							</ul>
 
 							<div class="navbar__right">
-								<button>
+								<button id="search-toggle">
 									<i class="fa-solid fa-magnifying-glass"></i>
 								</button>
 
@@ -49,6 +49,22 @@
 									<i class=""></i>
 								</button>
 							</div>
+
+							<form>
+								<div>
+									<p>Search</p>
+
+									<button id="search-closeBtn">
+										<i class="fa-solid fa-xmark"></i>
+									</button>
+								</div>
+
+								<input type="search" placeholder="Search for a topic..." />
+
+								<button type="submit">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</button>
+							</form>
 
 							<button id="mobile-closeBtn">
 								<i class="fa-solid fa-xmark"></i>
@@ -127,5 +143,6 @@
 		<script src="../scripts/theme.js"></script>
 		<script src="../scripts/scrollToTop.js"></script>
 		<script src="../scripts/loader.js"></script>
+		<script src="../scripts/searchBtn.js"></script>
 	</body>
 </html>
