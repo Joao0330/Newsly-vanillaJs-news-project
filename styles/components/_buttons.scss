@@ -3,13 +3,13 @@
 #scrollToTop {
 	position: fixed;
 	right: 5%;
-	bottom: -10%;
+	bottom: -20%;
 	padding: 1.4rem;
 	border: none;
 	background: $color-red;
 	border-radius: 50%;
 	cursor: pointer;
-	z-index: 999999;
+	z-index: 999;
 	opacity: 0;
 	transition: opacity 0.3s, bottom 0.3s;
 
@@ -25,5 +25,9 @@
 
 	&:hover {
 		opacity: 0.8;
+
+		@include breakpointDesktop(991px) {
+			opacity: 1;
+		}
 	}
 }
