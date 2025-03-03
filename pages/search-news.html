@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../styles/main.css" />
-		<title>Newsly - Health</title>
+		<title>Newsly - Search</title>
 	</head>
 	<body>
 		<button id="scrollToTop">
@@ -35,7 +35,7 @@
 								<li><a href="/">Home</a></li>
 								<li><a href="/pages/sports-news.html">Sports</a></li>
 								<li><a href="/pages/science-news.html">Science</a></li>
-								<li><a href="/pages/health-news.html" class="active">Health</a></li>
+								<li><a href="/pages/health-news.html">Health</a></li>
 								<li><a href="/pages/business-news.html">Business</a></li>
 								<li><a href="/pages/technology-news.html">Technology</a></li>
 							</ul>
@@ -66,37 +66,32 @@
 		</header>
 
 		<main>
-			<section class="hero">
+			<section class="news">
 				<div class="container">
-					<div class="hero__wrapper">
-						<div class="hero__title"></div>
+					<div class="news__wrapper">
+						<div class="news__content">
+							<form id="searchNewsForm">
+								<div>
+									<p>Search</p>
 
-						<div class="hero__featured">
-							<ul></ul>
+									<button id="search-closeBtn">
+										<i class="fa-solid fa-xmark"></i>
+									</button>
+								</div>
+
+								<input type="search" placeholder="Search for a topic..." />
+
+								<button type="button" id="searchNewsBtn">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</button>
+							</form>
+
+							<!-- TODO - Refactor the styles on this page -->
+
+							<div class="news__content-cards">
+								<h2>test</h2>
+							</div>
 						</div>
-					</div>
-				</div>
-
-				<button class="hero__sliderBtn hero__sliderBtn-prev"><i class="fa-solid fa-chevron-left"></i></button>
-				<button class="hero__sliderBtn hero__sliderBtn-next"><i class="fa-solid fa-chevron-right"></i></button>
-			</section>
-
-			<section class="newsAlt">
-				<div class="container">
-					<div class="newsAlt__wrapper">
-						<div class="newsAlt__title">
-							<span></span>
-							<h2>Latest News</h2>
-							<span></span>
-						</div>
-						<div class="newsAlt__top">
-							<div></div>
-							<div></div>
-						</div>
-
-						<h3>See other relevant health news</h3>
-
-						<div class="news__content-cards"></div>
 					</div>
 				</div>
 			</section>
@@ -122,7 +117,7 @@
 		</footer>
 
 		<script src="https://kit.fontawesome.com/b5dc311f0a.js" crossorigin="anonymous"></script>
-		<script type="module" src="../scripts/fetchNews.js"></script>
+		<script type="module" src="../scripts/searchNews.js"></script>
 		<script src="../scripts/mobile-menu.js"></script>
 		<script src="../scripts/theme.js"></script>
 		<script src="../scripts/scrollToTop.js"></script>
