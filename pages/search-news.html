@@ -66,31 +66,24 @@
 		</header>
 
 		<main>
-			<section class="news">
+			<section class="searchNews">
 				<div class="container">
-					<div class="news__wrapper">
-						<div class="news__content">
+					<div class="searchNews__wrapper">
+						<div class="searchNews__content">
 							<form id="searchNewsForm">
-								<div>
-									<p>Search</p>
-
-									<button id="search-closeBtn">
-										<i class="fa-solid fa-xmark"></i>
-									</button>
-								</div>
-
 								<input type="search" placeholder="Search for a topic..." />
 
-								<button type="button" id="searchNewsBtn">
+								<button type="submit" id="searchNewsBtn">
 									<i class="fa-solid fa-magnifying-glass"></i>
 								</button>
 							</form>
 
-							<!-- TODO - Refactor the styles on this page -->
-
-							<div class="news__content-cards">
-								<h2>test</h2>
+							<div class="searchNews__empty">
+								<i class="fa-solid fa-circle-info"></i>
+								<p>Search for your desired topic above.</p>
 							</div>
+
+							<div class="news__content-cards"></div>
 						</div>
 					</div>
 				</div>

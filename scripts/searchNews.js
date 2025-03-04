@@ -2,8 +2,9 @@ import { fetchNews } from '../lib/api.js';
 import { apiKey } from '../lib/config.js';
 import { defaultTemplate } from '../lib/newsContentTemplates.js';
 
+const searchForm = document.querySelector('#searchNewsForm');
 const searchInput = document.querySelector('form input');
-const searchBtn = document.querySelector('#searchNewsBtn');
+const topicTitle = document.querySelector('.searchNews__empty p');
 const newsCards = document.querySelector('.news__content-cards');
 
 const createArticleHTML = article => {
@@ -29,15 +30,18 @@ export const searchNews = async query => {
 
 	newsCards.innerHTML = '';
 
-	const newsArticles = news.slice(0, 13);
-	newsArticles.forEach(article => {
+	/* const newsArticles = news.slice(0, 13); */
+	news.forEach(article => {
 		newsCards.innerHTML += createArticleHTML(article);
 	});
+
+	topicTitle.textContent = `Search results for: "${query}"`;
 
 	console.log(news);
 };
 
-searchBtn.addEventListener('click', () => {
+searchForm.addEventListener('submit', e => {
+	e.preventDefault();
 	const query = searchInput.value.trim();
 	if (query) {
 		searchNews(query);

@@ -2,7 +2,7 @@
 :root {
   --text-color: #101010;
   --background-color: #f2f2f2;
-  --card-background-color: #f3ecec;
+  --card-background-color: #f0dada;
 }
 
 [data-theme=dark] {
@@ -437,76 +437,49 @@ small {
 }
 
 #searchNewsForm {
+  height: 50px;
+  width: 100%;
   margin-top: 5rem;
   display: flex;
-  flex-direction: column;
-  background: var(--card-background-color);
   border-radius: 10px;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  width: 100%;
+  border: 2px solid #e62b34;
   transition: 0.3s;
-}
-@media (max-width: 991px) {
-  #searchNewsForm {
-    display: none;
-    justify-content: center;
-  }
-}
-#searchNewsForm div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#searchNewsForm div p {
-  color: var(--text-color);
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-}
-#searchNewsForm div button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  color: var(--text-color);
-  font-size: 1rem;
-  transition: 0.3;
-}
-#searchNewsForm div button:hover {
-  color: #e62b34;
+  /* box-shadow: 0px 0px 5px 0px var(--text-color); */
+  overflow: hidden;
 }
 #searchNewsForm input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1.5rem;
   background: none;
   border: none;
   outline: none;
-  border-bottom: 1px solid rgba(158, 158, 158, 0.5);
   color: var(--text-color);
-  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 #searchNewsForm input::-moz-placeholder {
+  color: var(--text-color);
   font-size: 0.9rem;
 }
 #searchNewsForm input::placeholder {
+  color: var(--text-color);
   font-size: 0.9rem;
 }
-#searchNewsForm > button {
+#searchNewsForm button {
   background: #e62b34;
   color: #fafafa;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
   transition: 0.3s;
 }
-#searchNewsForm > button i {
+#searchNewsForm button i {
   transition: 0.3s;
 }
-#searchNewsForm > button:hover {
+#searchNewsForm button:hover {
   opacity: 0.8;
 }
-#searchNewsForm > button:hover i {
+#searchNewsForm button:hover i {
   transform: translateY(-2px);
 }
 
@@ -829,11 +802,6 @@ small {
     flex-direction: column;
   }
 }
-.news__content {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
 .news__side {
   width: 58%;
 }
@@ -1025,5 +993,30 @@ small {
   color: #e62b34;
 }
 .newsAlt__top article div address {
+  color: var(--text-color);
+}
+
+.searchNews {
+  min-height: 100vh;
+  background: var(--background-color);
+  padding: 4rem 0;
+}
+.searchNews__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.searchNews__empty {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  background: var(--card-background-color);
+}
+.searchNews__empty i {
+  color: #e62b34;
+  font-size: 2rem;
+}
+.searchNews__empty p {
   color: var(--text-color);
 }
