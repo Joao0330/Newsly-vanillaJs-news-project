@@ -135,6 +135,7 @@ small {
   justify-content: center;
   align-items: center;
   background: var(--background-color);
+  opacity: 0.9;
   transition: 0.5s;
   z-index: 9999;
 }
@@ -1005,6 +1006,37 @@ small {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+.searchNews__sort {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  .searchNews__sort {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.searchNews__sort div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.searchNews__sort div label {
+  color: var(--text-color);
+}
+.searchNews__sort div select {
+  background: none;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid #e62b34;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.searchNews__sort div select option {
+  background: var(--background-color);
 }
 .searchNews__empty {
   display: flex;

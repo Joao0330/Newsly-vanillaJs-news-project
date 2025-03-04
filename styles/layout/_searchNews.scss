@@ -11,6 +11,41 @@
 		gap: 4rem;
 	}
 
+	&__sort {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+
+		@include breakpointDesktop(600px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		div {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			label {
+				color: var(--text-color);
+			}
+
+			select {
+				background: none;
+				padding: 0.5rem;
+				outline: none;
+				border: 1px solid $color-red;
+				color: var(--text-color);
+				cursor: pointer;
+
+				option {
+					background: var(--background-color);
+				}
+			}
+		}
+	}
+
 	&__empty {
 		display: flex;
 		align-items: center;
