@@ -27,7 +27,10 @@ const createArticleHTML = article => {
 };
 
 export const searchNews = async query => {
-	let apiUrl = `https://newsapi.org/v2/everything?q="${encodeURIComponent(query)}"&apiKey=${apiKey}`;
+	const notyf = new Notyf({
+		duration: 4000,
+	});
+	let apiUrl = `https://newsapi.org/v2/everything?q="${encodeURIComponent(query)}"&searchIn=title&apiKey=${apiKey}`;
 
 	pageLoader();
 
@@ -85,8 +88,9 @@ export const searchNews = async query => {
 	try {
 		const news = await fetchNews(apiUrl);
 
-		if (news.length === 0) {
+		if (news.length === 0 || query === '') {
 			console.error('No news articles found.');
+			notyf.error('No news articles found.');
 			return;
 		}
 
@@ -113,8 +117,3 @@ searchForm.addEventListener('submit', e => {
 		searchNews(query);
 	}
 });
-
-/* setTimeout(() => {
-	loader.classList.add('hidden');
-	document.body.style.overflow = 'auto';
-}, 3000); */
