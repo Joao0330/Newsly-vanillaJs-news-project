@@ -3,12 +3,14 @@
   --text-color: #101010;
   --background-color: #f2f2f2;
   --card-background-color: #f0dada;
+  --navbar-background-color: #5c1212;
 }
 
 [data-theme=dark] {
   --text-color: #fafafa;
   --background-color: #08090b;
   --card-background-color: #0a0d12;
+  --navbar-background-color: #571111;
 }
 
 * {
@@ -104,7 +106,6 @@ small {
 }
 
 .container {
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   /* border: 1px solid red; */
@@ -250,29 +251,18 @@ small {
   }
 }
 
+.navbar {
+  background: #e62b34;
+}
 .navbar a {
   color: #fafafa;
 }
 .navbar__wrapper {
-  position: absolute;
-  z-index: 999;
-  left: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.3rem 0;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-}
-@media (max-width: 1200px) {
-  .navbar__wrapper {
-    padding: 0 4rem;
-  }
-}
-@media (max-width: 768px) {
-  .navbar__wrapper {
-    padding: 0 2rem;
-  }
+  /* border-bottom: 1px solid rgba(128, 128, 128, 0.5); */
 }
 .navbar nav {
   position: relative;
@@ -345,20 +335,20 @@ small {
   bottom: 0;
   left: 50%;
   width: 100%;
-  background: #e62b34;
+  background: var(--navbar-background-color);
   height: 4px;
   width: 0;
   transition: 0.4s;
 }
 .navbar nav ul a:hover {
-  color: #e62b34;
+  color: var(--navbar-background-color);
 }
 .navbar nav ul a:hover:after {
   left: 0;
   width: 100%;
 }
 .navbar nav ul a.active {
-  color: #e62b34;
+  color: var(--navbar-background-color);
 }
 .navbar nav ul a.active:after {
   left: 0;
@@ -388,7 +378,7 @@ small {
 }
 .navbar__right button:hover i,
 .navbar__right a:hover i {
-  color: #e62b34;
+  color: var(--navbar-background-color);
 }
 .navbar #mobile-closeBtn {
   position: absolute;

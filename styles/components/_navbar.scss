@@ -1,28 +1,18 @@
 @use '../abstracts/' as *;
 
 .navbar {
+	background: $color-red;
+
 	a {
 		color: $text-light;
 	}
 
 	&__wrapper {
-		position: absolute;
-		z-index: 999;
-		left: 0;
-		right: 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 0.3rem 0;
-		border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-
-		@include breakpointDesktop(1200px) {
-			padding: 0 4rem;
-		}
-
-		@include breakpointDesktop(768px) {
-			padding: 0 2rem;
-		}
+		/* border-bottom: 1px solid rgba(128, 128, 128, 0.5); */
 	}
 
 	nav {
@@ -101,14 +91,14 @@
 					bottom: 0;
 					left: 50%;
 					width: 100%;
-					background: $color-red;
+					background: var(--navbar-background-color);
 					height: 4px;
 					width: 0;
 					transition: 0.4s;
 				}
 
 				&:hover {
-					color: $color-red;
+					color: var(--navbar-background-color);
 
 					&:after {
 						left: 0;
@@ -116,7 +106,7 @@
 					}
 				}
 				&.active {
-					color: $color-red;
+					color: var(--navbar-background-color);
 
 					&:after {
 						left: 0;
@@ -150,7 +140,7 @@
 
 			&:hover {
 				i {
-					color: $color-red;
+					color: var(--navbar-background-color);
 				}
 			}
 		}
