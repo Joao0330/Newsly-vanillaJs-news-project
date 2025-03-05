@@ -6,4 +6,4 @@ document.body.style.overflow = 'hidden';
 setTimeout(() => {
 	loader.classList.add('hidden');
 	document.body.style.overflow = 'auto';
-}, 3000);
+}, 500);
