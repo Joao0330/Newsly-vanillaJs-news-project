@@ -304,6 +304,15 @@ small {
   left: 0;
   width: 100%;
 }
+@media (max-width: 991px) {
+  .navbar nav ul a:hover {
+    color: var(--text-color);
+  }
+  .navbar nav ul a:hover:after {
+    left: 50%;
+    width: 0;
+  }
+}
 .navbar nav ul a.active {
   color: var(--navbar-background-color);
 }
@@ -312,6 +321,7 @@ small {
   width: 100%;
 }
 .navbar__right {
+  position: relative;
   display: flex;
   gap: 1.5rem;
 }
@@ -336,6 +346,48 @@ small {
 .navbar__right button:hover i,
 .navbar__right a:hover i {
   color: var(--navbar-background-color);
+}
+.navbar__right div {
+  position: absolute;
+  background: rgba(63, 63, 63, 0.87);
+  padding: 0.5rem 1.5rem;
+  color: #fafafa;
+  z-index: 10;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar__right div:nth-of-type(1) {
+  left: -50%;
+  top: 190%;
+}
+.navbar__right div:nth-of-type(2) {
+  left: 23%;
+  top: 190%;
+}
+.navbar__right a:hover ~ div:nth-of-type(1) {
+  opacity: 1;
+  visibility: visible;
+  top: 120%;
+}
+@media (max-width: 991px) {
+  .navbar__right a:hover ~ div:nth-of-type(1) {
+    opacity: 0;
+    visibility: hidden;
+    top: 190%;
+  }
+}
+.navbar__right button:hover ~ div:nth-of-type(2) {
+  opacity: 1;
+  visibility: visible;
+  top: 120%;
+}
+@media (max-width: 991px) {
+  .navbar__right button:hover ~ div:nth-of-type(2) {
+    opacity: 0;
+    visibility: hidden;
+    top: 190%;
+  }
 }
 .navbar #mobile-closeBtn {
   position: absolute;
