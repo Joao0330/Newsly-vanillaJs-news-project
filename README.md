@@ -1,12 +1,12 @@
 # Newsly - A news website
 
-Newsly is a website made using vanilla javascript that allows the user to browse all types of news from around the world in multiple languages. All of this is possible with the use of the [News API](https://newsapi.org/)
+Newsly is a website made using vanilla javascript that allows the user to browse all types of news from around the world in multiple languages. All of this is possible with the use of the <a href="https://newsapi.org/" target="_blank">News API</a>
 
 ## ⚡Getting Started
 
-1.  Before launching the website, first, you should create an account on the [News API](https://newsapi.org/) website to have access to your API key that will be used to run the website.
+1.  Before launching the website, first, you should create an account on the <a href="https://newsapi.org/" target="_blank">News API</a> website to have access to your API key that will be used to run the website.
 
-2.  After registering, go to your [account page](https://newsapi.org/account) and retrive your **API KEY**.
+2.  After registering, go to your <a href="https://newsapi.org/account" target="_blank">account page</a> and retrive your **API KEY**.
 
 3.  Download the source code from the repository and your folder tree structure should look like this:
 
